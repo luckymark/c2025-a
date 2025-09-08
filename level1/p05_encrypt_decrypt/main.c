@@ -5,7 +5,7 @@
 
 void Encryption(char* str, int len, const char *key) {
     int keyLen = strlen(key);
-    for (int i = 0; i < len; i++) {  
+    for (int i = 0; i<len; i++) {
         str[i] = str[i] ^ key[i % keyLen];
     }
 }
@@ -24,7 +24,12 @@ int main() {
     int len = strlen(message);  
     printf("原始：%s\n", message);
     Encryption(message, len, key);  
-    printf("加密:%s\n",message);
+    printf("加密:");
+    for (int i = 0; i<len; i++)
+    {
+        printf(" 0x%02x", message[i]);
+    }
+    printf("\n");
     printf("请输入密钥: ");
     fgets(w_key, sizeof(w_key), stdin); 
     w_key[strcspn(w_key, "\n")] = '\0';
