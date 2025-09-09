@@ -28,6 +28,11 @@ int main() {
     for (int i = 0; i<len; i++)
     {
         printf(" 0x%02x", message[i]);
+
+
+
+
+        
     }
     printf("\n");
     printf("请输入密钥: ");
